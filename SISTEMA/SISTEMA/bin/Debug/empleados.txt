@@ -1,0 +1,65 @@
+
+ID: Alexander Emmanuel Zapata Espinoza
+Nombre: 0010105002050P
+Cédula: alexanderespi@gmail.com
+Correo: Masculino
+Sexo: Casado/a
+Estado: 81324797
+Celular: Linda Vista
+Domicilio: 00002
+Puesto: Personal de limpieza
+Área: No aplica
+Turno: Vespertino
+Hora Entrada: 07:00
+Hora Salida: 14:00
+Salario: 11500
+Contraseña: 8v0rqQM3
+--------------------------------------------------
+ID: 00002
+Nombre: Kimberly María Zapata Espinoza
+Cédula: 0012411041050L
+Correo: kmbrl241104@gmail.com
+Sexo: Femenino
+Estado: Soltero/a
+Celular: 76506887
+Domicilio: Residencial Las Brisas
+Puesto: Personal de limpieza
+Área: Primaria
+Turno: Matutino
+Hora Entrada: 07:00
+Hora Salida: 11:00
+Salario: 24500
+Contraseña: YFmAJElg
+--------------------------------------------------
+ID: 00008
+Nombre: Laura de los Ángeles Pérez Medina
+Cédula: 0010212031050O
+Correo: lauramedi@gmail.com
+Sexo: Femenino
+Estado: Casado/a
+Celular: 81381931
+Domicilio: Residencial Los Arcos
+Puesto: Coordinador
+Área: No aplica
+Turno: Matutino
+Hora Entrada: 07:00
+Hora Salida: 13:30
+Salario: 25000
+Contraseña: 25C4DR93
+--------------------------------------------------
+ID: 00010
+Nombre: jcnjncjnc
+Cédula: 1936129927312M
+Correo: jdjnjsdjedjfk@gmail
+Sexo: Femenino
+Estado: Soltero/a
+Celular: 81281902
+Domicilio: dbjbdjnejfjnjef
+Puesto: Coordinador
+Área: Primaria
+Turno: Nocturno
+Hora Entrada: 07:00
+Hora Salida: 12:00
+Salario: 71882
+Contraseña: bE4p64hb
+--------------------------------------------------
