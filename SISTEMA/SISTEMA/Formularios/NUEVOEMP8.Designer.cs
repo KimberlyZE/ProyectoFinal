@@ -62,8 +62,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.cmbPuesto = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.txtID = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.btnRegistrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -320,8 +318,6 @@
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.cmbPuesto);
             this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.txtID);
-            this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.groupBox2.Location = new System.Drawing.Point(12, 260);
@@ -339,7 +335,7 @@
             "Matutino",
             "Vespertino",
             "Nocturno"});
-            this.cmbTurno.Location = new System.Drawing.Point(547, 28);
+            this.cmbTurno.Location = new System.Drawing.Point(415, 31);
             this.cmbTurno.Name = "cmbTurno";
             this.cmbTurno.Size = new System.Drawing.Size(96, 25);
             this.cmbTurno.TabIndex = 30;
@@ -353,7 +349,7 @@
             "Primaria",
             "Secundaria",
             "No aplica"});
-            this.cmbArea.Location = new System.Drawing.Point(385, 28);
+            this.cmbArea.Location = new System.Drawing.Point(253, 31);
             this.cmbArea.Name = "cmbArea";
             this.cmbArea.Size = new System.Drawing.Size(96, 25);
             this.cmbArea.TabIndex = 29;
@@ -363,7 +359,7 @@
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label15.Location = new System.Drawing.Point(499, 34);
+            this.label15.Location = new System.Drawing.Point(367, 37);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(42, 17);
             this.label15.TabIndex = 28;
@@ -434,7 +430,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label11.Location = new System.Drawing.Point(339, 34);
+            this.label11.Location = new System.Drawing.Point(207, 37);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(40, 17);
             this.label11.TabIndex = 20;
@@ -456,7 +452,7 @@
             "Electricista",
             "Fontanero",
             "Orientador/a académico/a"});
-            this.cmbPuesto.Location = new System.Drawing.Point(215, 28);
+            this.cmbPuesto.Location = new System.Drawing.Point(83, 31);
             this.cmbPuesto.Name = "cmbPuesto";
             this.cmbPuesto.Size = new System.Drawing.Size(96, 25);
             this.cmbPuesto.TabIndex = 19;
@@ -466,30 +462,11 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label10.Location = new System.Drawing.Point(158, 34);
+            this.label10.Location = new System.Drawing.Point(26, 37);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(51, 17);
             this.label10.TabIndex = 18;
             this.label10.Text = "Puesto:";
-            // 
-            // txtID
-            // 
-            this.txtID.Location = new System.Drawing.Point(53, 31);
-            this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(80, 22);
-            this.txtID.TabIndex = 17;
-            this.txtID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtID_KeyPress);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label9.Location = new System.Drawing.Point(24, 36);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(23, 17);
-            this.label9.TabIndex = 16;
-            this.label9.Text = "ID:";
             // 
             // btnRegistrar
             // 
@@ -557,8 +534,6 @@
         private System.Windows.Forms.TextBox txtCelular;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtCedula;
-        private System.Windows.Forms.TextBox txtID;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox cmbPuesto;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;

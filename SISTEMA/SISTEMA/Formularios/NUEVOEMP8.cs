@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Security.AccessControl;
 
 namespace SISTEMA
 {
@@ -19,6 +20,7 @@ namespace SISTEMA
         public Form8()
         {
             InitializeComponent();
+            LeerArchivoYRegistrarEmpleados("empleados.txt");
         }
 
         private string GenerarContraseña()
@@ -33,6 +35,112 @@ namespace SISTEMA
             }
 
             return new string(contraseña);
+        }
+
+        private void LeerArchivoYRegistrarEmpleados(string rutaArchivo)
+        {
+            try
+            {
+                if (!File.Exists(rutaArchivo))
+                {
+                    MessageBox.Show("El archivo de empleados no se encontró.");
+                    return;
+                }
+
+                string[] lineas = File.ReadAllLines(rutaArchivo);
+                List<string> empleadoActual = new List<string>();
+                foreach (string linea in lineas)
+                {
+                    if (linea.Trim() == "--------------------------------------------------")
+                    {
+                        ProcesarEmpleado(empleadoActual);
+                        empleadoActual.Clear();
+                    }
+                    else
+                    {
+                        empleadoActual.Add(linea);
+                    }
+                }
+
+                // Procesar el último empleado si el archivo no termina con "--------------------------------------------------"
+                if (empleadoActual.Count > 0)
+                {
+                    ProcesarEmpleado(empleadoActual);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al leer el archivo: {ex.Message}");
+            }
+        }
+
+        private string GenerarNuevoID(string rutaArchivo)
+        {
+            try
+            {
+                // Si el archivo no existe, el primer ID será "00001"
+                if (!File.Exists(rutaArchivo))
+                {
+                    return "00001";
+                }
+
+                // Leer todas las líneas del archivo
+                var lineas = File.ReadAllLines(rutaArchivo);
+
+                // Filtrar las líneas que contienen "ID:"
+                var ids = lineas
+                    .Where(linea => linea.StartsWith("ID:"))
+                    .Select(linea => linea.Substring(3).Trim()) // Extraer el número del ID
+                    .Where(id => int.TryParse(id, out _))       // Filtrar IDs válidos
+                    .Select(id => int.Parse(id))               // Convertir a entero
+                    .ToList();
+
+                // Si no hay IDs válidos, el primer ID será "00001"
+                if (ids.Count == 0)
+                {
+                    return "00001";
+                }
+
+                // Obtener el máximo ID, incrementarlo y formatearlo a 5 dígitos
+                int nuevoID = ids.Max() + 1;
+                return nuevoID.ToString("D5");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al generar nuevo ID: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return "00001"; // En caso de error, retornar el ID inicial
+            }
+        }
+
+
+        private void ProcesarEmpleado(List<string> datosEmpleado)
+        {
+            try
+            {
+                string id = "";
+                string nombre = "";
+                string contraseña = "";
+
+                foreach (string dato in datosEmpleado)
+                {
+                    if (dato.StartsWith("ID:")) id = dato.Substring(3).Trim();
+                    else if (dato.StartsWith("Nombre:")) nombre = dato.Substring(7).Trim();
+                    else if (dato.StartsWith("Contraseña:")) contraseña = dato.Substring(11).Trim();
+                }
+
+                if (!string.IsNullOrWhiteSpace(id) && !string.IsNullOrWhiteSpace(contraseña))
+                {
+
+                }
+                else
+                {
+                    MessageBox.Show("Datos del empleado incompletos, no se registrará.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al procesar empleado: {ex.Message}");
+            }
         }
 
 
@@ -86,6 +194,14 @@ namespace SISTEMA
         }
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
+            // Ruta del archivo de empleados
+            string rutaArchivo = "empleados.txt";
+
+            // Generar un nuevo ID
+            string nuevoID = GenerarNuevoID(rutaArchivo);
+
+            // Asignar el nuevo ID al campo correspondiente             
+
 
             // Validar que todos los campos estén completos
             if (string.IsNullOrEmpty(txtNombre.Text) || string.IsNullOrEmpty(txtCedula.Text) || string.IsNullOrEmpty(txtCelular.Text) ||
@@ -101,19 +217,16 @@ namespace SISTEMA
             string contraseñaGenerada = GenerarContraseña();
 
             // Guardar los datos del empleado en un archivo de texto
-            GuardarEmpleadoEnArchivo(txtID.Text, txtNombre.Text, txtCedula.Text, txtCorreo.Text, cmbSexo.SelectedItem.ToString(),
+            GuardarEmpleadoEnArchivo(nuevoID, txtNombre.Text, txtCedula.Text, txtCorreo.Text, cmbSexo.SelectedItem.ToString(),
                 cmbEstado.SelectedItem.ToString(), txtCelular.Text, txtDomicilio.Text, cmbPuesto.SelectedItem.ToString(),
                 cmbArea.SelectedItem.ToString(), cmbTurno.SelectedItem.ToString(), datetimeHoraEntrada.Value, datetimeHoraSalida.Value, txtSalario.Text, contraseñaGenerada);
-
-            // Registrar al empleado en el diccionario con su ID y contraseña
-            Form pantallaEmpleado = new Form2();  // Este es un formulario de ejemplo para el empleado
-            usuariosRegistrados.Add(txtID.Text.ToLower(), new Tuple<string, string, Form>(txtID.Text.ToLower(), contraseñaGenerada, pantallaEmpleado));
 
             // Confirmar que el registro fue exitoso
             MessageBox.Show("Empleado registrado con éxito.");
         }
 
-            private void txtSalario_TextChanged(object sender, EventArgs e)
+
+        private void txtSalario_TextChanged(object sender, EventArgs e)
         {
 
         }
@@ -125,10 +238,10 @@ namespace SISTEMA
 
         private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
-            
+
             if (!char.IsLetter(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && e.KeyChar != (char)Keys.Back)
             {
-                e.Handled = true; 
+                e.Handled = true;
                 MessageBox.Show("Solo se permiten letras y espacios en el nombre.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
@@ -140,13 +253,13 @@ namespace SISTEMA
 
         private void txtCedula_KeyPress(object sender, KeyPressEventArgs e)
         {
-            
+
             if (char.IsControl(e.KeyChar))
             {
                 return;
             }
 
-            
+
             if (txtCedula.Text.Length < 13)
             {
                 // Permitir solo números en los primeros 13 caracteres
@@ -192,16 +305,16 @@ namespace SISTEMA
                 e.Handled = true; // Bloquear cualquier carácter no permitido
             }
 
-            
+
             if (e.KeyChar == '@' && txtCorreo.Text.Contains("@"))
             {
-                e.Handled = true; 
+                e.Handled = true;
             }
 
-            
+
             if (e.KeyChar == '.' && !txtCorreo.Text.Contains("@"))
             {
-                e.Handled = true; 
+                e.Handled = true;
             }
         }
 
@@ -210,7 +323,7 @@ namespace SISTEMA
             //Permite todo para la direccion
             if (!Char.IsControl(e.KeyChar) && !Char.IsLetterOrDigit(e.KeyChar) && e.KeyChar != ' ' && e.KeyChar != ',' && e.KeyChar != '.' && e.KeyChar != '-')
             {
-                e.Handled = true; 
+                e.Handled = true;
             }
         }
 
@@ -219,13 +332,13 @@ namespace SISTEMA
             // Verificar si la tecla presionada es un número
             if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
             {
-                e.Handled = true; 
+                e.Handled = true;
             }
         }
 
         private void txtSalario_KeyPress(object sender, KeyPressEventArgs e)
         {
-           
+
             if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
             {
                 e.Handled = true;
@@ -234,8 +347,8 @@ namespace SISTEMA
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Close();       
-            DIRECCION3 form3 = new DIRECCION3(); 
+            this.Close();
+            DIRECCION3 form3 = new DIRECCION3();
             form3.Show();
         }
 
@@ -247,6 +360,58 @@ namespace SISTEMA
         private void Form8_Load(object sender, EventArgs e)
         {
 
+
+        }
+
+        private void MostrarDatosEnDataGridView()
+        {
+            try
+            {
+                string rutaArchivo = "empleados.txt";
+
+                if (!File.Exists(rutaArchivo))
+                {
+                    MessageBox.Show("El archivo no existe.");
+                    return;
+                }
+
+                // Lista para almacenar los datos de empleados
+                List<List<string>> datosEmpleados = new List<List<string>>();
+
+                string[] lineas = File.ReadAllLines(rutaArchivo);
+                List<string> empleadoActual = new List<string>();
+
+                foreach (string linea in lineas)
+                {
+                    if (linea.Trim() == "--------------------------------------------------")
+                    {
+                        if (empleadoActual.Count > 0)
+                        {
+                            datosEmpleados.Add(new List<string>(empleadoActual));
+                            empleadoActual.Clear();
+                        }
+                    }
+                    else
+                    {
+                        empleadoActual.Add(linea.Substring(linea.IndexOf(":") + 1).Trim());
+                    }
+                }
+
+                // Agregar el último empleado, si existe
+                if (empleadoActual.Count > 0)
+                {
+                    datosEmpleados.Add(new List<string>(empleadoActual));
+                }
+
+                // Mostrar datos en Form9
+                Form9 form9 = new Form9();
+                form9.CargarDatosEnDataGridView(datosEmpleados);
+                form9.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al mostrar datos: {ex.Message}");
+            }
         }
     }
 }

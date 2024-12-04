@@ -31,5 +31,17 @@ namespace SISTEMA
         {
 
         }
+
+        private void btncerrar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnRegistrarEntrada_Click(object sender, EventArgs e)
+        {
+            VALIDARASIS10 nuevoForm = new VALIDARASIS10();
+            this.Hide();
+            nuevoForm.Show();
+        }
     }
 }

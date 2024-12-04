@@ -32,7 +32,7 @@
             this.btncerrar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnRegistrarSalida = new System.Windows.Forms.Button();
+            this.empleadosActi = new System.Windows.Forms.Button();
             this.btnRegistrarEmpleado = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -73,21 +73,22 @@
             this.label1.TabIndex = 17;
             this.label1.Text = "Selecciona tu opción correspondiente";
             // 
-            // btnRegistrarSalida
+            // empleadosActi
             // 
-            this.btnRegistrarSalida.BackColor = System.Drawing.Color.White;
-            this.btnRegistrarSalida.DialogResult = System.Windows.Forms.DialogResult.No;
-            this.btnRegistrarSalida.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(165)))), ((int)(((byte)(214)))));
-            this.btnRegistrarSalida.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.btnRegistrarSalida.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegistrarSalida.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistrarSalida.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(165)))), ((int)(((byte)(214)))));
-            this.btnRegistrarSalida.Location = new System.Drawing.Point(418, 268);
-            this.btnRegistrarSalida.Name = "btnRegistrarSalida";
-            this.btnRegistrarSalida.Size = new System.Drawing.Size(251, 63);
-            this.btnRegistrarSalida.TabIndex = 21;
-            this.btnRegistrarSalida.Text = "Gestionar empleados activos";
-            this.btnRegistrarSalida.UseVisualStyleBackColor = false;
+            this.empleadosActi.BackColor = System.Drawing.Color.White;
+            this.empleadosActi.DialogResult = System.Windows.Forms.DialogResult.No;
+            this.empleadosActi.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(165)))), ((int)(((byte)(214)))));
+            this.empleadosActi.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.empleadosActi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.empleadosActi.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.empleadosActi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(165)))), ((int)(((byte)(214)))));
+            this.empleadosActi.Location = new System.Drawing.Point(418, 268);
+            this.empleadosActi.Name = "empleadosActi";
+            this.empleadosActi.Size = new System.Drawing.Size(251, 63);
+            this.empleadosActi.TabIndex = 21;
+            this.empleadosActi.Text = "Gestionar empleados activos";
+            this.empleadosActi.UseVisualStyleBackColor = false;
+            this.empleadosActi.Click += new System.EventHandler(this.empleadosActi_Click);
             // 
             // btnRegistrarEmpleado
             // 
@@ -112,7 +113,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(698, 421);
-            this.Controls.Add(this.btnRegistrarSalida);
+            this.Controls.Add(this.empleadosActi);
             this.Controls.Add(this.btnRegistrarEmpleado);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
@@ -133,7 +134,7 @@
         private System.Windows.Forms.Button btncerrar;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnRegistrarSalida;
+        private System.Windows.Forms.Button empleadosActi;
         private System.Windows.Forms.Button btnRegistrarEmpleado;
     }
 }

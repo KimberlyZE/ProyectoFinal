@@ -92,6 +92,7 @@
             this.btnlogin.TabIndex = 12;
             this.btnlogin.Text = "Registrar";
             this.btnlogin.UseVisualStyleBackColor = false;
+            this.btnlogin.Click += new System.EventHandler(this.btnlogin_Click);
             // 
             // label1
             // 
@@ -114,9 +115,11 @@
             // 
             // dateTimePicker3
             // 
-            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateTimePicker3.CustomFormat = "HH:mm";
+            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker3.Location = new System.Drawing.Point(128, 121);
             this.dateTimePicker3.Name = "dateTimePicker3";
+            this.dateTimePicker3.ShowUpDown = true;
             this.dateTimePicker3.Size = new System.Drawing.Size(127, 20);
             this.dateTimePicker3.TabIndex = 0;
             // 

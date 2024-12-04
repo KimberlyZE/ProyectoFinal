@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static SISTEMA.Form1;
 
 namespace SISTEMA
 {
@@ -14,8 +15,13 @@ namespace SISTEMA
     {
         public Form2()
         {
+
+            string idUsuarioActual = SesionUsuario.IdUsuario;
+
             InitializeComponent();
         }
+
+
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {

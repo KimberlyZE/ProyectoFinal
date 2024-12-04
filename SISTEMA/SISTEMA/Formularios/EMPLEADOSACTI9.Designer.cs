@@ -37,6 +37,20 @@
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cedula = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.celular = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.domicilio = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.puesto = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.area = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.turno = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.horaEntrada = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.horaSalida = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.salario = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -79,6 +93,7 @@
             this.btncerrar.TabIndex = 21;
             this.btncerrar.Text = "X";
             this.btncerrar.UseVisualStyleBackColor = false;
+            this.btncerrar.Click += new System.EventHandler(this.btncerrar_Click);
             // 
             // toolStrip1
             // 
@@ -123,10 +138,96 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id,
+            this.nombre,
+            this.cedula,
+            this.correo,
+            this.sexo,
+            this.estado,
+            this.celular,
+            this.domicilio,
+            this.puesto,
+            this.area,
+            this.turno,
+            this.horaEntrada,
+            this.horaSalida,
+            this.salario});
             this.dataGridView1.Location = new System.Drawing.Point(25, 117);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(643, 283);
             this.dataGridView1.TabIndex = 24;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // id
+            // 
+            this.id.HeaderText = "ID";
+            this.id.Name = "id";
+            // 
+            // nombre
+            // 
+            this.nombre.HeaderText = "Nombre";
+            this.nombre.Name = "nombre";
+            // 
+            // cedula
+            // 
+            this.cedula.HeaderText = "Cédula";
+            this.cedula.Name = "cedula";
+            // 
+            // correo
+            // 
+            this.correo.HeaderText = "Correo";
+            this.correo.Name = "correo";
+            // 
+            // sexo
+            // 
+            this.sexo.HeaderText = "Sexo";
+            this.sexo.Name = "sexo";
+            // 
+            // estado
+            // 
+            this.estado.HeaderText = "Estado";
+            this.estado.Name = "estado";
+            // 
+            // celular
+            // 
+            this.celular.HeaderText = "Celular";
+            this.celular.Name = "celular";
+            // 
+            // domicilio
+            // 
+            this.domicilio.HeaderText = "Domicilio";
+            this.domicilio.Name = "domicilio";
+            // 
+            // puesto
+            // 
+            this.puesto.HeaderText = "Puesto";
+            this.puesto.Name = "puesto";
+            // 
+            // area
+            // 
+            this.area.HeaderText = "Área";
+            this.area.Name = "area";
+            // 
+            // turno
+            // 
+            this.turno.HeaderText = "Turno";
+            this.turno.Name = "turno";
+            // 
+            // horaEntrada
+            // 
+            this.horaEntrada.HeaderText = "Hora de entrada";
+            this.horaEntrada.Name = "horaEntrada";
+            // 
+            // horaSalida
+            // 
+            this.horaSalida.HeaderText = "Hora de salida";
+            this.horaSalida.Name = "horaSalida";
+            // 
+            // salario
+            // 
+            this.salario.HeaderText = "Salario";
+            this.salario.Name = "salario";
             // 
             // Form9
             // 
@@ -162,5 +263,19 @@
         private System.Windows.Forms.ToolStripButton toolStripButton2;
         private System.Windows.Forms.ToolStripButton toolStripButton3;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cedula;
+        private System.Windows.Forms.DataGridViewTextBoxColumn correo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sexo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn celular;
+        private System.Windows.Forms.DataGridViewButtonColumn domicilio;
+        private System.Windows.Forms.DataGridViewButtonColumn puesto;
+        private System.Windows.Forms.DataGridViewButtonColumn area;
+        private System.Windows.Forms.DataGridViewButtonColumn turno;
+        private System.Windows.Forms.DataGridViewButtonColumn horaEntrada;
+        private System.Windows.Forms.DataGridViewButtonColumn horaSalida;
+        private System.Windows.Forms.DataGridViewButtonColumn salario;
     }
 }

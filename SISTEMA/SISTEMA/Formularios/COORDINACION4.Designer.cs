@@ -71,6 +71,7 @@
             this.btncerrar.TabIndex = 28;
             this.btncerrar.Text = "X";
             this.btncerrar.UseVisualStyleBackColor = false;
+            this.btncerrar.Click += new System.EventHandler(this.btncerrar_Click);
             // 
             // btnRegistrarSalida
             // 
@@ -103,8 +104,9 @@
             this.btnRegistrarEntrada.TabIndex = 29;
             this.btnRegistrarEntrada.Text = "Validar asistencia y horas extras";
             this.btnRegistrarEntrada.UseVisualStyleBackColor = false;
+            this.btnRegistrarEntrada.Click += new System.EventHandler(this.btnRegistrarEntrada_Click);
             // 
-            // Form4
+            // COORDINACION4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -116,7 +118,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Form4";
+            this.Name = "COORDINACION4";
             this.Text = "COORDINACION4";
             this.Load += new System.EventHandler(this.Form4_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

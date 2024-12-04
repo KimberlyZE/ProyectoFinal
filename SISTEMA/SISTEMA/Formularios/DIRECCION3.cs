@@ -64,5 +64,17 @@ namespace SISTEMA
             this.Hide();
             nuevoForm.Show(); // Muestra el formulario
         }
+
+        private void empleadosActi_Click(object sender, EventArgs e)
+        {
+            // Crear una nueva instancia de Form9
+            Form9 nuevoForm = new Form9();
+
+            // Mostrar Form9
+            nuevoForm.Show();
+
+            // Ocultar el Form8 actual (si es necesario)
+            this.Hide();
+        }
     }
 }
