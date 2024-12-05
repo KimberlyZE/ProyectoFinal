@@ -43,5 +43,13 @@ namespace SISTEMA
             this.Hide();
             nuevoForm.Show();
         }
+
+        private void btnRegistrarSalida_Click(object sender, EventArgs e)
+        {
+
+            Form11 nuevoForm = new Form11();
+            this.Hide();
+            nuevoForm.Show();
+        }
     }
 }

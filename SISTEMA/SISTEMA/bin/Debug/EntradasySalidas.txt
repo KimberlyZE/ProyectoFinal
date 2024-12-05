@@ -3,5 +3,10 @@ Usuario: 0001, Entrada: 2024-12-02 21:46:45
 Usuario: 0001, Salida: 2024-12-02 21:46:57
 Usuario: 00002, Entrada: 2024-12-02 22:31:14
 Usuario: 00002, Salida: 2024-12-02 22:31:19
+<<<<<<< HEAD
 Usuario: 00003, Entrada: 2024-12-04 16:51:14
 Usuario: 00003, Salida: 2024-12-04 16:51:34
+=======
+>>>>>>> 2910c41d6d348fb5154b2eb8e79bf9189a1a26dc
+Usuario: 00002, Entrada: 2024-12-05 10:04:37
+Usuario: 00002, Salida: 2024-12-05 10:04:43

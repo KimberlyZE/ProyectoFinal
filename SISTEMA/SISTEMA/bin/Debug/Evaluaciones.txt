@@ -1,0 +1,13 @@
+ID Empleado: 00002
+Nombre: Rossman Cabrera
+Evaluación Desde: 2/12/2024
+Evaluación Hasta: 5/12/2024
+Calificación: 8
+Comentarios: Ingresa un poco tarde. Buen empleado.
+ID Empleado: 00003
+Nombre: Luis Laguna
+Evaluación Desde: 4/12/2024
+Evaluación Hasta: 5/12/2024
+Calificación: 2
+Comentarios: No llega a la instituación.
+----------------------------------------

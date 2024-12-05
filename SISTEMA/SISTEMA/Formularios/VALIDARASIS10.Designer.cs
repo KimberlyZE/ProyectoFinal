@@ -47,9 +47,6 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.btncerrar = new System.Windows.Forms.Button();
-            this.fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.horaentradapuesto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.horasalidapuesto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -165,13 +162,9 @@
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.fecha,
-            this.horaentradapuesto,
-            this.horasalidapuesto});
-            this.dataGridView2.Location = new System.Drawing.Point(186, 280);
+            this.dataGridView2.Location = new System.Drawing.Point(201, 279);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(343, 120);
+            this.dataGridView2.Size = new System.Drawing.Size(328, 120);
             this.dataGridView2.TabIndex = 7;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
@@ -257,21 +250,6 @@
             this.btncerrar.UseVisualStyleBackColor = false;
             this.btncerrar.Click += new System.EventHandler(this.btncerrar_Click);
             // 
-            // fecha
-            // 
-            this.fecha.HeaderText = "Fecha";
-            this.fecha.Name = "fecha";
-            // 
-            // horaentradapuesto
-            // 
-            this.horaentradapuesto.HeaderText = "Hora de entrada";
-            this.horaentradapuesto.Name = "horaentradapuesto";
-            // 
-            // horasalidapuesto
-            // 
-            this.horasalidapuesto.HeaderText = "Hora de salida";
-            this.horasalidapuesto.Name = "horasalidapuesto";
-            // 
             // VALIDARASIS10
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -320,8 +298,5 @@
         private System.Windows.Forms.TextBox horasalidapuestoasis;
         private System.Windows.Forms.TextBox horaentradapuestoasis;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fecha;
-        private System.Windows.Forms.DataGridViewTextBoxColumn horaentradapuesto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn horasalidapuesto;
     }
 }

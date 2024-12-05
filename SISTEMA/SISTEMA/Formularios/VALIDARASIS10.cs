@@ -87,72 +87,103 @@ namespace SISTEMA
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            // Obtén los valores de los controles
-            string id = idpuestoasis.Text; // ID del empleado
-            DateTime fechaInicio = fechainicioasis.Value; // Fecha de inicio
-            DateTime fechaFin = fechafinalasis.Value; // Fecha de fin
+            string idEmpleado = idpuestoasis.Text.Trim();
+            string fechaDesde = fechainicioasis.Value.ToString("yyyy-MM-dd");
+            string fechaHasta = fechafinalasis.Value.ToString("yyyy-MM-dd");
 
-            // Verifica que el campo ID esté completo
-            if (!string.IsNullOrEmpty(id))
+            if (string.IsNullOrEmpty(idEmpleado))
             {
-                // Limpiar el DataGridView antes de agregar nuevos resultados
-                dataGridView2.Rows.Clear();
+                MessageBox.Show("Por favor, ingresa un ID de empleado.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
-                // Leer el archivo de empleados para obtener el nombre y las horas de entrada y salida
-                string[] empleados = File.ReadAllLines("empleados.txt");
+            // Leer el archivo empleados.txt
+            string[] empleados = File.ReadAllLines("empleados.txt");
+            string nombreEmpleado = string.Empty;
+            string horaEntrada = string.Empty;
+            string horaSalida = string.Empty;
 
-                // Buscar el empleado por ID
-                string nombreEmpleado = "";
-                string horaEntrada = "";
-                string horaSalida = "";
-
-                foreach (string empleado in empleados)
+            foreach (string linea in empleados)
+            {
+                if (linea.Contains($"ID: {idEmpleado}"))
                 {
-                    // Suponiendo que los empleados están en formato: "id,nombre,horaEntrada, horaSalida"
-                    string[] datosEmpleado = empleado.Split(',');
+                    nombreEmpleado = empleados.SkipWhile(l => !l.Contains($"ID: {idEmpleado}"))
+                                              .FirstOrDefault(l => l.StartsWith("Nombre:"))?
+                                              .Replace("Nombre:", "").Trim();
 
-                    if (datosEmpleado[0] == id)
+                    horaEntrada = empleados.SkipWhile(l => !l.Contains($"ID: {idEmpleado}"))
+                                            .FirstOrDefault(l => l.StartsWith("Hora Entrada:"))?
+                                            .Replace("Hora Entrada:", "").Trim();
+
+                    horaSalida = empleados.SkipWhile(l => !l.Contains($"ID: {idEmpleado}"))
+                                           .FirstOrDefault(l => l.StartsWith("Hora Salida:"))?
+                                           .Replace("Hora Salida:", "").Trim();
+                    break;
+                }
+            }
+
+            if (string.IsNullOrEmpty(nombreEmpleado))
+            {
+                MessageBox.Show("Empleado no encontrado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Asignar valores al formulario
+            nombrepuestoasis.Text = nombreEmpleado;
+            horaentradapuestoasis.Text = horaEntrada;
+            horasalidapuestoasis.Text = horaSalida;
+
+            // Leer el archivo EntradasSalidas.txt
+            string[] entradasSalidas = File.ReadAllLines("EntradasySalidas.txt");
+
+            // Imprime las líneas del archivo en la consola para depuración
+            foreach (string linea in entradasSalidas)
+            {
+                Console.WriteLine(linea);
+            }
+
+            // Obtener el ID del empleado y las fechas seleccionadas
+            string idEmpleadof = idpuestoasis.Text.Trim();
+            DateTime desde = fechainicioasis.Value.Date;
+            DateTime hasta = fechafinalasis.Value.Date;
+
+            // Crear una lista para almacenar los registros filtrados
+            var registros = new List<object>();
+
+            // Iterar por cada línea del archivo
+            foreach (string linea in entradasSalidas)
+            {
+                if (linea.Contains($"Usuario: {idEmpleado}"))
+                {
+                    string fechaHora = string.Empty;
+                    string tipo = string.Empty;
+
+                    // Extraer datos de Entrada o Salida
+                    if (linea.Contains("Entrada:"))
                     {
-                        nombreEmpleado = datosEmpleado[1];
-                        horaEntrada = datosEmpleado[2];
-                        horaSalida = datosEmpleado[3];
-                        break; // Encontrado, no es necesario seguir buscando
+                        fechaHora = linea.Substring(linea.IndexOf("Entrada:") + 8).Trim();
+                        tipo = "Entrada";
                     }
-                }
-
-                // Si no se encontró el empleado
-                if (string.IsNullOrEmpty(nombreEmpleado))
-                {
-                    MessageBox.Show("Empleado no encontrado.");
-                    return;
-                }
-
-                // Leer el archivo de asistencia para obtener las entradas y salidas por fecha
-                string[] entradasSalidas = File.ReadAllLines("EntradasySalidas.txt");
-
-                // Filtrar las asistencias por el rango de fechas
-                foreach (string entradaSalida in entradasSalidas)
-                {
-                    // Suponiendo que el formato del archivo es: "id,fecha,entrada, salida"
-                    string[] datosEntradaSalida = entradaSalida.Split(',');
-
-                    string idEmpleado = datosEntradaSalida[0];
-                    DateTime fechaEntrada = DateTime.Parse(datosEntradaSalida[1]);
-                    string entrada = datosEntradaSalida[2];
-                    string salida = datosEntradaSalida[3];
-
-                    // Verificar si el ID del empleado coincide y si la fecha está dentro del rango
-                    if (idEmpleado == id && fechaEntrada >= fechaInicio && fechaEntrada <= fechaFin)
+                    else if (linea.Contains("Salida:"))
                     {
-                        // Agregar los datos al DataGridView
-                        dataGridView2.Rows.Add(fechaEntrada.ToShortDateString(), entrada, salida);
+                        fechaHora = linea.Substring(linea.IndexOf("Salida:") + 7).Trim();
+                        tipo = "Salida";
+                    }
+
+                    // Filtrar por rango de fechas
+                    if (DateTime.TryParse(fechaHora, out DateTime fecha) && fecha.Date >= desde && fecha.Date <= hasta)
+                    {
+                        registros.Add(new
+                        {
+                            Tipo = tipo,
+                            FechayHora = fechaHora
+                        });
                     }
                 }
             }
-            else
-            {
-                MessageBox.Show("Por favor, complete el campo ID antes de buscar.");
-            }
+
+            // Asignar los datos al DataGridView
+            dataGridView2.DataSource = registros.ToList();
         }
 
         private void idpuestoasis_TextChanged(object sender, EventArgs e)

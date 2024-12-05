@@ -22,5 +22,12 @@ namespace SISTEMA
 
 
         }
+
+        private void btnRegistrarEntrada_Click(object sender, EventArgs e)
+        {
+            Form12 nuevoForm = new Form12();
+            this.Hide();
+            nuevoForm.Show();
+        }
     }
 }

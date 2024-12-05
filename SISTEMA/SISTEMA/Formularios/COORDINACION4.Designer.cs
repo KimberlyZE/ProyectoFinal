@@ -88,6 +88,7 @@
             this.btnRegistrarSalida.TabIndex = 30;
             this.btnRegistrarSalida.Text = "Evaluación y reporte general";
             this.btnRegistrarSalida.UseVisualStyleBackColor = false;
+            this.btnRegistrarSalida.Click += new System.EventHandler(this.btnRegistrarSalida_Click);
             // 
             // btnRegistrarEntrada
             // 
