@@ -59,6 +59,7 @@
             this.btncerrar.TabIndex = 15;
             this.btncerrar.Text = "X";
             this.btncerrar.UseVisualStyleBackColor = false;
+            this.btncerrar.Click += new System.EventHandler(this.btncerrar_Click);
             // 
             // label1
             // 

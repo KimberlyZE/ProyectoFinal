@@ -190,6 +190,13 @@ namespace SISTEMA
         {
 
         }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();       // Cierra ENTRADA6
+            Form COORDINACION4 = new COORDINACION4(); // Crea una nueva instancia de Form2
+            COORDINACION4.Show();
+            this.Hide();
+        }
 
         private void VALIDARASIS10_Load(object sender, EventArgs e)
         {

@@ -82,6 +82,12 @@ namespace SISTEMA
         {
 
         }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            DIRECCION3 form3 = new DIRECCION3();
+            form3.Show();
+        }
 
         private void btncerrar_Click(object sender, EventArgs e)
         {

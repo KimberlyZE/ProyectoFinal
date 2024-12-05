@@ -354,7 +354,7 @@ namespace SISTEMA
 
         private void btncerrar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         private void Form8_Load(object sender, EventArgs e)

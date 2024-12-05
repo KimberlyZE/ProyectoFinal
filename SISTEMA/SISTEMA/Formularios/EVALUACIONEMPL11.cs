@@ -108,5 +108,19 @@ namespace SISTEMA
                 MessageBox.Show($"Error al guardar la evaluación: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();       // Cierra ENTRADA6
+            Form COORDINACION4 = new COORDINACION4(); // Crea una nueva instancia de Form2
+            COORDINACION4.Show();
+            this.Hide();
+        }
+
+        private void btncerrar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
     }
 }

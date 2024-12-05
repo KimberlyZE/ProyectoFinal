@@ -33,6 +33,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.btncerrar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnBuscarEval = new System.Windows.Forms.Button();
+            this.idEvalua = new System.Windows.Forms.TextBox();
             this.nombreEvalua = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -47,8 +49,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnGuardarEvaluacion = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.idEvalua = new System.Windows.Forms.TextBox();
-            this.btnBuscarEval = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -78,6 +78,7 @@
             this.button2.TabIndex = 24;
             this.button2.Text = "<--";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // btncerrar
             // 
@@ -92,6 +93,7 @@
             this.btncerrar.TabIndex = 23;
             this.btncerrar.Text = "X";
             this.btncerrar.UseVisualStyleBackColor = false;
+            this.btncerrar.Click += new System.EventHandler(this.btncerrar_Click);
             // 
             // groupBox1
             // 
@@ -108,6 +110,30 @@
             this.groupBox1.TabIndex = 25;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Información del empleado";
+            // 
+            // btnBuscarEval
+            // 
+            this.btnBuscarEval.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(165)))), ((int)(((byte)(214)))));
+            this.btnBuscarEval.DialogResult = System.Windows.Forms.DialogResult.No;
+            this.btnBuscarEval.FlatAppearance.BorderSize = 0;
+            this.btnBuscarEval.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnBuscarEval.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscarEval.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscarEval.ForeColor = System.Drawing.Color.White;
+            this.btnBuscarEval.Location = new System.Drawing.Point(182, 26);
+            this.btnBuscarEval.Name = "btnBuscarEval";
+            this.btnBuscarEval.Size = new System.Drawing.Size(60, 34);
+            this.btnBuscarEval.TabIndex = 29;
+            this.btnBuscarEval.Text = "Buscar";
+            this.btnBuscarEval.UseVisualStyleBackColor = false;
+            this.btnBuscarEval.Click += new System.EventHandler(this.btnBuscarEval_Click);
+            // 
+            // idEvalua
+            // 
+            this.idEvalua.Location = new System.Drawing.Point(47, 32);
+            this.idEvalua.Name = "idEvalua";
+            this.idEvalua.Size = new System.Drawing.Size(100, 22);
+            this.idEvalua.TabIndex = 5;
             // 
             // nombreEvalua
             // 
@@ -262,30 +288,6 @@
             this.button1.TabIndex = 28;
             this.button1.Text = "Generar reporte";
             this.button1.UseVisualStyleBackColor = false;
-            // 
-            // idEvalua
-            // 
-            this.idEvalua.Location = new System.Drawing.Point(47, 32);
-            this.idEvalua.Name = "idEvalua";
-            this.idEvalua.Size = new System.Drawing.Size(100, 22);
-            this.idEvalua.TabIndex = 5;
-            // 
-            // btnBuscarEval
-            // 
-            this.btnBuscarEval.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(165)))), ((int)(((byte)(214)))));
-            this.btnBuscarEval.DialogResult = System.Windows.Forms.DialogResult.No;
-            this.btnBuscarEval.FlatAppearance.BorderSize = 0;
-            this.btnBuscarEval.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.btnBuscarEval.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscarEval.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscarEval.ForeColor = System.Drawing.Color.White;
-            this.btnBuscarEval.Location = new System.Drawing.Point(182, 26);
-            this.btnBuscarEval.Name = "btnBuscarEval";
-            this.btnBuscarEval.Size = new System.Drawing.Size(60, 34);
-            this.btnBuscarEval.TabIndex = 29;
-            this.btnBuscarEval.Text = "Buscar";
-            this.btnBuscarEval.UseVisualStyleBackColor = false;
-            this.btnBuscarEval.Click += new System.EventHandler(this.btnBuscarEval_Click);
             // 
             // Form11
             // 

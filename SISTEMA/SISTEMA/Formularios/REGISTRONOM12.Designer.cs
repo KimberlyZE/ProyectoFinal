@@ -33,6 +33,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.btncerrar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.buscarNomi = new System.Windows.Forms.Button();
             this.idNomi = new System.Windows.Forms.TextBox();
             this.salarioNomi = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -60,7 +61,6 @@
             this.desdeNomi = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
-            this.buscarNomi = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -90,6 +90,7 @@
             this.button2.TabIndex = 28;
             this.button2.Text = "<--";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // btncerrar
             // 
@@ -104,6 +105,7 @@
             this.btncerrar.TabIndex = 27;
             this.btncerrar.Text = "X";
             this.btncerrar.UseVisualStyleBackColor = false;
+            this.btncerrar.Click += new System.EventHandler(this.btncerrar_Click);
             // 
             // groupBox1
             // 
@@ -130,6 +132,23 @@
             this.groupBox1.TabIndex = 29;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Información del empleado";
+            // 
+            // buscarNomi
+            // 
+            this.buscarNomi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(165)))), ((int)(((byte)(214)))));
+            this.buscarNomi.DialogResult = System.Windows.Forms.DialogResult.No;
+            this.buscarNomi.FlatAppearance.BorderSize = 0;
+            this.buscarNomi.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.buscarNomi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buscarNomi.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buscarNomi.ForeColor = System.Drawing.Color.White;
+            this.buscarNomi.Location = new System.Drawing.Point(229, 23);
+            this.buscarNomi.Name = "buscarNomi";
+            this.buscarNomi.Size = new System.Drawing.Size(89, 34);
+            this.buscarNomi.TabIndex = 45;
+            this.buscarNomi.Text = "Buscar";
+            this.buscarNomi.UseVisualStyleBackColor = false;
+            this.buscarNomi.Click += new System.EventHandler(this.buscarNomi_Click);
             // 
             // idNomi
             // 
@@ -421,23 +440,6 @@
             this.button3.Text = "Generar Nómina";
             this.button3.UseVisualStyleBackColor = false;
             // 
-            // buscarNomi
-            // 
-            this.buscarNomi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(165)))), ((int)(((byte)(214)))));
-            this.buscarNomi.DialogResult = System.Windows.Forms.DialogResult.No;
-            this.buscarNomi.FlatAppearance.BorderSize = 0;
-            this.buscarNomi.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.buscarNomi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buscarNomi.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buscarNomi.ForeColor = System.Drawing.Color.White;
-            this.buscarNomi.Location = new System.Drawing.Point(229, 23);
-            this.buscarNomi.Name = "buscarNomi";
-            this.buscarNomi.Size = new System.Drawing.Size(89, 34);
-            this.buscarNomi.TabIndex = 45;
-            this.buscarNomi.Text = "Buscar";
-            this.buscarNomi.UseVisualStyleBackColor = false;
-            this.buscarNomi.Click += new System.EventHandler(this.buscarNomi_Click);
-            // 
             // Form12
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -455,6 +457,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form12";
             this.Text = "REGISTRONOM12";
+            this.Load += new System.EventHandler(this.Form12_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

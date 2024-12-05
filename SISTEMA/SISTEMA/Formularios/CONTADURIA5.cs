@@ -23,6 +23,11 @@ namespace SISTEMA
 
         }
 
+        private void btncerrar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
         private void btnRegistrarEntrada_Click(object sender, EventArgs e)
         {
             Form12 nuevoForm = new Form12();

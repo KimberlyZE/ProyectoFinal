@@ -13,6 +13,8 @@ namespace SISTEMA
 {
     public partial class Form12 : Form
     {
+        private decimal salarioBruto; // Definir la variable salarioBruto a nivel de clase
+
         public Form12()
         {
             InitializeComponent();
@@ -40,7 +42,44 @@ namespace SISTEMA
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
+            try
+            {
+                // Verificar que salarioBruto tenga un valor válido antes de calcular.
+                if (salarioBruto <= 0)
+                {
+                    MessageBox.Show("El salario bruto debe ser mayor a cero para realizar el cálculo.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
 
+                // Cálculo del INSS.
+                decimal inss = salarioBruto * 0.07m;
+
+                // Cálculo del IR basado en tramos.
+                decimal ir = 0;
+                if (salarioBruto > 100000)
+                {
+                    decimal exceso = salarioBruto - 100000;
+                    if (exceso <= 200000)
+                        ir = exceso * 0.15m;
+                    else if (exceso <= 300000)
+                        ir = exceso * 0.20m;
+                    else if (exceso <= 500000)
+                        ir = exceso * 0.25m;
+                    else
+                        ir = exceso * 0.30m;
+                }
+
+                // Salario Neto.
+                decimal salarioNeto = salarioBruto - inss - ir;
+
+                // Mostrar resultados en los controles de la UI.
+                inssnomi.Text = inss.ToString("C");
+                salanetoNomi.Text = salarioNeto.ToString("C");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al calcular el salario: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void buscarNomi_Click(object sender, EventArgs e)
@@ -50,88 +89,103 @@ namespace SISTEMA
                 // Obtener el ID ingresado
                 string idEmpleado = idNomi.Text.Trim();
 
-                // Validar si el ID fue ingresado
                 if (string.IsNullOrEmpty(idEmpleado))
                 {
                     MessageBox.Show("Por favor, ingresa un ID de empleado.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
-                // Leer todo el archivo de empleados.txt
+                // Leer el archivo completo
                 string[] empleados = File.ReadAllLines("empleados.txt");
+                bool encontrado = false;
 
-                // Variables para almacenar los datos del empleado
+                // Variables para guardar datos del empleado
                 string nombreEmpleado = string.Empty;
                 string cedula = string.Empty;
                 string puesto = string.Empty;
                 string area = string.Empty;
                 string turno = string.Empty;
-                decimal salarioBruto = 0;
 
-                // Bandera para verificar si el empleado fue encontrado
-                bool encontrado = false;
-
-                // Iterar por cada línea en el archivo
+                // Procesar línea por línea
                 for (int i = 0; i < empleados.Length; i++)
                 {
-                    // Mostrar en consola los valores que estamos leyendo para depurar
-                    Console.WriteLine($"Leyendo línea {i + 1}: {empleados[i]}");
-
-                    // Verificar si la línea contiene el ID del empleado
-                    if (empleados[i].Contains($"ID: {idEmpleado}"))
+                    // Buscar el ID
+                    if (empleados[i].StartsWith($"ID: {idEmpleado}"))
                     {
                         encontrado = true;
-                        Console.WriteLine($"Empleado encontrado con ID: {idEmpleado}");
 
-                        // Leer los datos del empleado en las siguientes líneas
-                        nombreEmpleado = empleados[i + 1].Replace("Nombre:", "").Trim();
-                        cedula = empleados[i + 2].Replace("Cédula:", "").Trim();
-                        puesto = empleados[i + 9].Replace("Puesto:", "").Trim();
-                        area = empleados[i + 10].Replace("Área:", "").Trim();
-                        turno = empleados[i + 8].Replace("Turno:", "").Trim();
-
-                        // Limpiar y convertir el salario
-                        string salarioTexto = empleados[i + 11].Replace("Salario:", "").Trim();
-                        salarioTexto = salarioTexto.Replace(",", ""); // Eliminar comas si las hay
-                        Console.WriteLine($"Salario encontrado: {salarioTexto}");
-
-                        // Intentar convertir el salario
-                        if (!decimal.TryParse(salarioTexto, out salarioBruto))
+                        // Leer los siguientes datos
+                        Dictionary<string, string> datos = new Dictionary<string, string>();
+                        for (int j = i + 1; j < empleados.Length; j++)
                         {
-                            MessageBox.Show($"El salario para el empleado con ID {idEmpleado} no tiene el formato correcto.",
-                                            "Error de Formato",
-                                            MessageBoxButtons.OK,
-                                            MessageBoxIcon.Error);
-                            return;
+                            if (empleados[j].StartsWith("--------------------------------------------------"))
+                                break;
+
+                            string[] partes = empleados[j].Split(new char[] { ':' }, 2);
+                            if (partes.Length == 2)
+                            {
+                                string clave = partes[0].Trim();
+                                string valor = partes[1].Trim();
+                                datos[clave] = valor;
+                            }
                         }
 
-                        break;  // Salir del ciclo después de encontrar al empleado
+                        // Asignar datos si existen
+                        datos.TryGetValue("Nombre", out nombreEmpleado);
+                        datos.TryGetValue("Cédula", out cedula);
+                        datos.TryGetValue("Puesto", out puesto);
+                        datos.TryGetValue("Área", out area);
+                        datos.TryGetValue("Turno", out turno);
+
+                        if (datos.TryGetValue("Salario", out string salarioTexto))
+                        {
+                            salarioTexto = salarioTexto.Replace(",", "");
+                            if (!decimal.TryParse(salarioTexto, out salarioBruto))
+                            {
+                                MessageBox.Show("Error al convertir el salario.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                return;
+                            }
+                        }
+
+                        break;
                     }
                 }
 
-                // Si no se encontró el empleado, mostrar mensaje
                 if (!encontrado)
                 {
                     MessageBox.Show("Empleado no encontrado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
-                // Asignar los datos a los controles del formulario
+                // Mostrar datos en controles
                 nombreNomi.Text = nombreEmpleado;
                 cedulaNomi.Text = cedula;
                 puestoNomi.Text = puesto;
                 areaNomi.Text = area;
-                salarioNomi.Text = salarioBruto.ToString("C"); // Formato de moneda
                 turnoNomi.Text = turno;
-
-                // Mostrar los datos encontrados en consola (opcional, solo para depuración)
-                Console.WriteLine($"Nombre: {nombreEmpleado}, Cédula: {cedula}, Puesto: {puesto}, Área: {area}, Turno: {turno}, Salario: {salarioBruto:C}");
+                salarioNomi.Text = salarioBruto.ToString("C");
 
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Error al buscar el empleado: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            CONTADURIA5 form = new CONTADURIA5();
+            form.Show();
+        }
+
+        private void btncerrar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+        private void Form12_Load(object sender, EventArgs e)
+        {
+
         }
     }
     
