@@ -28,3 +28,113 @@ Salario Bruto: C$25,000.00
 INSS: C$1,750.00
 Salario Neto: C$23,250.00
 --------------------------------------------------
+ID: 00001
+Nombre: Kimberly Zapata
+Cédula: 0012411041050L
+Puesto: Técnico en mantenimiento
+Área: Secundaria
+Turno: Nocturno
+Salario Bruto: C$25,000.00
+INSS: C$1,750.00
+Salario Neto: C$23,250.00
+--------------------------------------------------
+ID: 00001
+Nombre: Kimberly Zapata
+Cédula: 0012411041050L
+Puesto: Técnico en mantenimiento
+Área: Secundaria
+Turno: Nocturno
+Salario Bruto: C$25,000.00
+INSS: C$1,750.00
+Salario Neto: C$23,250.00
+--------------------------------------------------
+ID: 00001
+Nombre: Kimberly Zapata
+Cédula: 0012411041050L
+Puesto: Técnico en mantenimiento
+Área: Secundaria
+Turno: Nocturno
+Salario Bruto: C$25,000.00
+INSS: C$1,750.00
+Salario Neto: C$23,250.00
+--------------------------------------------------
+ID: 00001
+Nombre: Kimberly Zapata
+Cédula: 0012411041050L
+Puesto: Técnico en mantenimiento
+Área: Secundaria
+Turno: Nocturno
+Salario Bruto: C$25,000.00
+INSS: C$1,750.00
+Salario Neto: C$23,250.00
+--------------------------------------------------
+ID: 00001
+Nombre: Kimberly Zapata
+Cédula: 0012411041050L
+Puesto: Técnico en mantenimiento
+Área: Secundaria
+Turno: Nocturno
+Salario Bruto: C$25,000.00
+INSS: C$1,750.00
+Salario Neto: C$23,250.00
+--------------------------------------------------
+ID: 00001
+Nombre: Kimberly Zapata
+Cédula: 0012411041050L
+Puesto: Técnico en mantenimiento
+Área: Secundaria
+Turno: Nocturno
+Salario Bruto: C$25,000.00
+INSS: C$1,750.00
+Salario Neto: C$23,250.00
+--------------------------------------------------
+ID: 00001
+Nombre: Kimberly Zapata
+Cédula: 0012411041050L
+Puesto: Técnico en mantenimiento
+Área: Secundaria
+Turno: Nocturno
+Salario Bruto: C$25,000.00
+INSS: C$1,750.00
+Salario Neto: C$23,250.00
+--------------------------------------------------
+ID: 00001
+Nombre: Kimberly Zapata
+Cédula: 0012411041050L
+Puesto: Técnico en mantenimiento
+Área: Secundaria
+Turno: Nocturno
+Salario Bruto: C$25,000.00
+INSS: C$1,750.00
+Salario Neto: C$23,250.00
+--------------------------------------------------
+ID: 00001
+Nombre: Kimberly Zapata
+Cédula: 0012411041050L
+Puesto: Técnico en mantenimiento
+Área: Secundaria
+Turno: Nocturno
+Salario Bruto: C$25,000.00
+INSS: C$1,750.00
+Salario Neto: C$23,250.00
+--------------------------------------------------
+ID: 00001
+Nombre: Kimberly Zapata
+Cédula: 0012411041050L
+Puesto: Técnico en mantenimiento
+Área: Secundaria
+Turno: Nocturno
+Salario Bruto: C$25,000.00
+INSS: C$1,750.00
+Salario Neto: C$23,250.00
+--------------------------------------------------
+ID: 00003
+Nombre: Luis Laguna
+Cédula: 0010503018042P
+Puesto: Docente
+Área: Primaria
+Turno: Matutino
+Salario Bruto: C$15,000.00
+INSS: C$1,050.00
+Salario Neto: C$13,950.00
+--------------------------------------------------
