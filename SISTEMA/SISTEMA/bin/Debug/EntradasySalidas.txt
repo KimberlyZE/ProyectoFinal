@@ -12,3 +12,4 @@ Usuario: 00002, Entrada: 2024-12-05 10:04:37
 Usuario: 00002, Salida: 2024-12-05 10:04:43
 Usuario: 00002, Entrada: 2024-12-05 14:09:28
 Usuario: 00002, Salida: 2024-12-05 14:09:34
+Usuario: 00003, Entrada: 2024-12-05 23:18:20

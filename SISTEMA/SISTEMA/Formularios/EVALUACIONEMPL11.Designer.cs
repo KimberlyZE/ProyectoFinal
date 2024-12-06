@@ -48,7 +48,6 @@
             this.desdeEvalua = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.btnGuardarEvaluacion = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -265,7 +264,7 @@
             this.btnGuardarEvaluacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardarEvaluacion.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardarEvaluacion.ForeColor = System.Drawing.Color.White;
-            this.btnGuardarEvaluacion.Location = new System.Drawing.Point(139, 368);
+            this.btnGuardarEvaluacion.Location = new System.Drawing.Point(271, 368);
             this.btnGuardarEvaluacion.Name = "btnGuardarEvaluacion";
             this.btnGuardarEvaluacion.Size = new System.Drawing.Size(155, 34);
             this.btnGuardarEvaluacion.TabIndex = 27;
@@ -273,29 +272,12 @@
             this.btnGuardarEvaluacion.UseVisualStyleBackColor = false;
             this.btnGuardarEvaluacion.Click += new System.EventHandler(this.btnGuardarEvaluacion_Click);
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(165)))), ((int)(((byte)(214)))));
-            this.button1.DialogResult = System.Windows.Forms.DialogResult.No;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(407, 368);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(155, 34);
-            this.button1.TabIndex = 28;
-            this.button1.Text = "Generar reporte";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
             // Form11
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(699, 420);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnGuardarEvaluacion);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -334,7 +316,6 @@
         private System.Windows.Forms.DateTimePicker hastaEvalua;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnGuardarEvaluacion;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox idEvalua;
         private System.Windows.Forms.Button btnBuscarEval;
     }
