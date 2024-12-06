@@ -21,6 +21,7 @@ namespace SISTEMA
         {
             InitializeComponent();
             LeerArchivoYRegistrarEmpleados("empleados.txt");
+
         }
 
         private string GenerarContraseña()

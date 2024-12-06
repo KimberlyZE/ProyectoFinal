@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DsNomina" targetNamespace="http://tempuri.org/DsNomina.xsd" xmlns:mstns="http://tempuri.org/DsNomina.xsd" xmlns="http://tempuri.org/DsNomina.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DsNomina" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_UserDSName="DsNomina" msprop:Generator_DataSetName="DsNomina">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="NominaDT" msprop:Generator_RowEvHandlerName="NominaDTRowChangeEventHandler" msprop:Generator_RowDeletedName="NominaDTRowDeleted" msprop:Generator_RowDeletingName="NominaDTRowDeleting" msprop:Generator_RowEvArgName="NominaDTRowChangeEvent" msprop:Generator_TablePropName="NominaDT" msprop:Generator_RowChangedName="NominaDTRowChanged" msprop:Generator_RowChangingName="NominaDTRowChanging" msprop:Generator_TableClassName="NominaDTDataTable" msprop:Generator_RowClassName="NominaDTRow" msprop:Generator_TableVarName="tableNominaDT" msprop:Generator_UserTableName="NominaDT">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_UserColumnName="ID" type="xs:int" minOccurs="0" />
+              <xs:element name="Nombre" msprop:Generator_ColumnPropNameInRow="Nombre" msprop:Generator_ColumnPropNameInTable="NombreColumn" msprop:Generator_ColumnVarNameInTable="columnNombre" msprop:Generator_UserColumnName="Nombre" type="xs:string" minOccurs="0" />
+              <xs:element name="Cedula" msprop:Generator_ColumnPropNameInRow="Cedula" msprop:Generator_ColumnPropNameInTable="CedulaColumn" msprop:Generator_ColumnVarNameInTable="columnCedula" msprop:Generator_UserColumnName="Cedula" type="xs:string" minOccurs="0" />
+              <xs:element name="SalarioBruto" msprop:Generator_ColumnPropNameInRow="SalarioBruto" msprop:Generator_ColumnPropNameInTable="SalarioBrutoColumn" msprop:Generator_ColumnVarNameInTable="columnSalarioBruto" msprop:Generator_UserColumnName="SalarioBruto" type="xs:string" minOccurs="0" />
+              <xs:element name="INSS" msprop:Generator_ColumnPropNameInRow="INSS" msprop:Generator_ColumnPropNameInTable="INSSColumn" msprop:Generator_ColumnVarNameInTable="columnINSS" msprop:Generator_UserColumnName="INSS" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Total" msprop:Generator_ColumnPropNameInRow="Total" msprop:Generator_ColumnPropNameInTable="TotalColumn" msprop:Generator_ColumnVarNameInTable="columnTotal" msprop:Generator_UserColumnName="Total" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

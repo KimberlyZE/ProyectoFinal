@@ -93,5 +93,77 @@ namespace SISTEMA
         {
             Application.Exit();
         }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void toolStripButton3_Click(object sender, EventArgs e)
+        {
+            // Verificar si hay una fila seleccionada en el DataGridView
+            if (dataGridView1.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Por favor, selecciona un empleado para eliminar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Confirmar eliminación
+            DialogResult confirmacion = MessageBox.Show("¿Estás seguro de que deseas eliminar este empleado?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (confirmacion == DialogResult.No)
+                return;
+
+            // Obtener el ID del empleado para buscarlo en el archivo
+            string idEmpleado = dataGridView1.SelectedRows[0].Cells[0].Value?.ToString();
+
+            if (string.IsNullOrEmpty(idEmpleado))
+            {
+                MessageBox.Show("No se encontró el ID del empleado seleccionado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Eliminar el empleado del archivo
+            try
+            {
+                string[] lineas = File.ReadAllLines("empleados.txt");
+                List<string> nuevasLineas = new List<string>();
+                bool empleadoEliminado = false;
+
+                for (int i = 0; i < lineas.Length; i++)
+                {
+                    if (lineas[i].StartsWith($"ID: {idEmpleado}"))
+                    {
+                        // Saltar líneas del empleado actual
+                        empleadoEliminado = true;
+                        while (i < lineas.Length && !lineas[i].StartsWith("--------------------------------------------------"))
+                            i++;
+                    }
+                    else
+                    {
+                        nuevasLineas.Add(lineas[i]);
+                    }
+                }
+
+                if (empleadoEliminado)
+                {
+                    File.WriteAllLines("empleados.txt", nuevasLineas);
+                    MessageBox.Show("Empleado eliminado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    CargarDatosDesdeArchivo("empleados.txt");
+                }
+                else
+                {
+                    MessageBox.Show("No se encontró al empleado para eliminar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al eliminar empleado: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

@@ -8,6 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using Microsoft.Reporting.WinForms;
+using SISTEMA.Clases;
+using SISTEMA.Formularios;
+using SISTEMA.DataSet;
 
 namespace SISTEMA
 {
@@ -186,6 +190,92 @@ namespace SISTEMA
         private void Form12_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void LimpiarCampos()
+        {
+            idNomi.Text = string.Empty;
+            nombreNomi.Text = string.Empty;
+            cedulaNomi.Text = string.Empty;
+            puestoNomi.Text = string.Empty;
+            areaNomi.Text = string.Empty;
+            turnoNomi.Text = string.Empty;
+            salarioNomi.Text = string.Empty;
+            inssnomi.Text = string.Empty;
+            salanetoNomi.Text = string.Empty;
+            salarioBruto = 0;
+        }
+
+        private void guardarNomi_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Verificar que los datos necesarios estén completos.
+                if (string.IsNullOrWhiteSpace(nombreNomi.Text) ||
+                    string.IsNullOrWhiteSpace(cedulaNomi.Text) ||
+                    string.IsNullOrWhiteSpace(puestoNomi.Text) ||
+                    string.IsNullOrWhiteSpace(areaNomi.Text) ||
+                    string.IsNullOrWhiteSpace(turnoNomi.Text) ||
+                    salarioBruto <= 0)
+                {
+                    MessageBox.Show("Por favor, completa todos los datos antes de guardar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // Formato de los datos a guardar.
+                string registro = $"ID: {idNomi.Text}\n" +
+                                  $"Nombre: {nombreNomi.Text}\n" +
+                                  $"Cédula: {cedulaNomi.Text}\n" +
+                                  $"Puesto: {puestoNomi.Text}\n" +
+                                  $"Área: {areaNomi.Text}\n" +
+                                  $"Turno: {turnoNomi.Text}\n" +
+                                  $"Salario Bruto: {salarioNomi.Text}\n" +
+                                  $"INSS: {inssnomi.Text}\n" +
+                                  $"Salario Neto: {salanetoNomi.Text}\n" +
+                                  "--------------------------------------------------\n";
+
+                // Guardar en el archivo "registros de nomina.txt".
+                string archivo = "RegistrosdeNominas.txt";
+                File.AppendAllText(archivo, registro);
+
+                MessageBox.Show("Datos de nómina guardados exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Limpiar campos después de guardar.
+                LimpiarCampos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al guardar los datos: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            DsNomina miDataSet = new DsNomina();
+
+
+            ReportDataSource dataSource = new ReportDataSource("DsDatos", miDataSet.Tables["NominaDT"]);
+            FrmReporte frm = new FrmReporte();
+            frm.reportViewer1.LocalReport.DataSources.Clear();
+            frm.reportViewer1.LocalReport.DataSources.Add(dataSource);
+            frm.reportViewer1.LocalReport.ReportEmbeddedResource = "SISTEMA.Reportes.RptNomina.rdlc";
+            frm.reportViewer1.RefreshReport();
+            frm.ShowDialog();
+
+        }
+        private void LlenarDataTableDesdeArchivo(string rutaArchivo, DataTable tabla)
+        {
+            // Lee las líneas del archivo
+            string[] lineas = File.ReadAllLines(rutaArchivo);
+
+            foreach (string linea in lineas)
+            {
+                // Divide los valores según el separador (coma en este caso)
+                string[] valores = linea.Split(',');
+
+                // Agrega una nueva fila al DataTable
+                tabla.Rows.Add(valores);
+            }
         }
     }
     

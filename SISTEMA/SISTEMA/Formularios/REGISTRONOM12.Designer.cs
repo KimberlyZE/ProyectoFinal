@@ -372,6 +372,7 @@
             this.guardarNomi.TabIndex = 32;
             this.guardarNomi.Text = "Guardar";
             this.guardarNomi.UseVisualStyleBackColor = false;
+            this.guardarNomi.Click += new System.EventHandler(this.guardarNomi_Click);
             // 
             // fechaestablecida
             // 
@@ -439,6 +440,7 @@
             this.button3.TabIndex = 34;
             this.button3.Text = "Generar Nómina";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // Form12
             // 

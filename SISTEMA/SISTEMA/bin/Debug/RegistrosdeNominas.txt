@@ -1,0 +1,30 @@
+ID: 00001
+Nombre: Kimberly Zapata
+Cédula: 0012411041050L
+Puesto: Técnico en mantenimiento
+Área: Secundaria
+Turno: Nocturno
+Salario Bruto: C$25,000.00
+INSS: C$1,750.00
+Salario Neto: C$23,250.00
+--------------------------------------------------
+ID: 00002
+Nombre: Rossman Cabrera
+Cédula: 0012308008216K
+Puesto: Docente
+Área: Preescolar
+Turno: Nocturno
+Salario Bruto: C$5,000.00
+INSS: C$350.00
+Salario Neto: C$4,650.00
+--------------------------------------------------
+ID: 00001
+Nombre: Kimberly Zapata
+Cédula: 0012411041050L
+Puesto: Técnico en mantenimiento
+Área: Secundaria
+Turno: Nocturno
+Salario Bruto: C$25,000.00
+INSS: C$1,750.00
+Salario Neto: C$23,250.00
+--------------------------------------------------
