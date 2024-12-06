@@ -253,28 +253,108 @@ namespace SISTEMA
         {
             DsNomina miDataSet = new DsNomina();
 
+            // Obtener el ID ingresado
+            string idEmpleado = idNomi.Text.Trim();
 
+            // Llenar el DataTable del DataSet desde el archivo
+            LlenarDataTableDesdeArchivo("RegistrosdeNominas.txt", miDataSet.Tables["NominaDT"], idEmpleado);
+
+            // Crear la fuente de datos para el reporte
             ReportDataSource dataSource = new ReportDataSource("DsDatos", miDataSet.Tables["NominaDT"]);
+
+            // Configurar y mostrar el reporte
             FrmReporte frm = new FrmReporte();
             frm.reportViewer1.LocalReport.DataSources.Clear();
             frm.reportViewer1.LocalReport.DataSources.Add(dataSource);
             frm.reportViewer1.LocalReport.ReportEmbeddedResource = "SISTEMA.Reportes.RptNomina.rdlc";
             frm.reportViewer1.RefreshReport();
             frm.ShowDialog();
-
         }
-        private void LlenarDataTableDesdeArchivo(string rutaArchivo, DataTable tabla)
+
+        private void LlenarDataTableDesdeArchivo(string rutaArchivo, DataTable tabla, string idEmpleado)
         {
-            // Lee las líneas del archivo
-            string[] lineas = File.ReadAllLines(rutaArchivo);
-
-            foreach (string linea in lineas)
+            // Verifica que el archivo exista
+            if (!File.Exists(rutaArchivo))
             {
-                // Divide los valores según el separador (coma en este caso)
-                string[] valores = linea.Split(',');
+                MessageBox.Show($"El archivo {rutaArchivo} no existe.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
-                // Agrega una nueva fila al DataTable
-                tabla.Rows.Add(valores);
+            try
+            {
+                // Leer todas las líneas del archivo
+                string[] lineas = File.ReadAllLines(rutaArchivo);
+
+                // Variables auxiliares para construir una fila
+                DataRow fila = null;
+                bool agregarFila = false;
+
+                foreach (string linea in lineas)
+                {
+                    // Ignorar líneas separadoras
+                    if (linea.StartsWith("--------------------------------------------------"))
+                    {
+                        if (fila != null && agregarFila)
+                        {
+                            tabla.Rows.Add(fila);
+                        }
+                        fila = null; // Preparar para el próximo registro
+                        agregarFila = false;
+                        continue;
+                    }
+
+                    // Procesar línea con formato "Clave: Valor"
+                    string[] partes = linea.Split(new char[] { ':' }, 2, StringSplitOptions.RemoveEmptyEntries);
+
+                    if (partes.Length == 2)
+                    {
+                        string clave = partes[0].Trim();
+                        string valor = partes[1].Trim();
+
+                        // Crear una nueva fila si es necesario
+                        if (fila == null)
+                        {
+                            fila = tabla.NewRow();
+                        }
+
+                        // Mapear claves a columnas del DataTable
+                        switch (clave)
+                        {
+                            case "ID":
+                                fila["ID"] = valor;
+                                if (valor == idEmpleado)
+                                {
+                                    agregarFila = true;
+                                }
+                                break;
+                            case "Nombre":
+                                fila["Nombre"] = valor;
+                                break;
+                            case "Cédula":
+                                fila["Cedula"] = valor;
+                                break;
+                            case "Salario Bruto":
+                                fila["SalarioBruto"] = decimal.TryParse(valor.Replace("C$", "").Trim(), out decimal salarioBruto) ? salarioBruto : 0;
+                                break;
+                            case "INSS":
+                                fila["INSS"] = decimal.TryParse(valor.Replace("C$", "").Trim(), out decimal inss) ? inss : 0;
+                                break;
+                            case "Salario Neto":
+                                fila["Total"] = decimal.TryParse(valor.Replace("C$", "").Trim(), out decimal salarioNeto) ? salarioNeto : 0;
+                                break;
+                        }
+                    }
+                }
+
+                // Agregar la última fila si no se agregó previamente
+                if (fila != null && agregarFila)
+                {
+                    tabla.Rows.Add(fila);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al llenar la tabla desde el archivo: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

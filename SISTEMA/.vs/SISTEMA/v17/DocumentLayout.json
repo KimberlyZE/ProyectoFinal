@@ -1,46 +1,10 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Administrador\\OneDrive\\Documentos\\ProyectoFinal\\SISTEMA\\",
+  "WorkspaceRootPath": "C:\\Users\\rosma\\OneDrive\\Escritorio\\ProyectoFinal\\SISTEMA\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{228EAC07-45A9-4506-A55B-32EFB19D7085}|SISTEMA\\SISTEMA.csproj|c:\\users\\administrador\\onedrive\\documentos\\proyectofinal\\sistema\\sistema\\formularios\\frmreporte.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{228EAC07-45A9-4506-A55B-32EFB19D7085}|SISTEMA\\SISTEMA.csproj|solutionrelative:sistema\\formularios\\frmreporte.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{228EAC07-45A9-4506-A55B-32EFB19D7085}|SISTEMA\\SISTEMA.csproj|c:\\users\\administrador\\onedrive\\documentos\\proyectofinal\\sistema\\sistema\\formularios\\frmreporte.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{228EAC07-45A9-4506-A55B-32EFB19D7085}|SISTEMA\\SISTEMA.csproj|solutionrelative:sistema\\formularios\\frmreporte.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{228EAC07-45A9-4506-A55B-32EFB19D7085}|SISTEMA\\SISTEMA.csproj|c:\\users\\administrador\\onedrive\\documentos\\proyectofinal\\sistema\\sistema\\formularios\\empleadosacti9.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{228EAC07-45A9-4506-A55B-32EFB19D7085}|SISTEMA\\SISTEMA.csproj|solutionrelative:sistema\\formularios\\empleadosacti9.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{228EAC07-45A9-4506-A55B-32EFB19D7085}|SISTEMA\\SISTEMA.csproj|c:\\users\\administrador\\onedrive\\documentos\\proyectofinal\\sistema\\sistema\\formularios\\registronom12.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{228EAC07-45A9-4506-A55B-32EFB19D7085}|SISTEMA\\SISTEMA.csproj|c:\\users\\rosma\\onedrive\\escritorio\\proyectofinal\\sistema\\sistema\\formularios\\registronom12.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{228EAC07-45A9-4506-A55B-32EFB19D7085}|SISTEMA\\SISTEMA.csproj|solutionrelative:sistema\\formularios\\registronom12.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{228EAC07-45A9-4506-A55B-32EFB19D7085}|SISTEMA\\SISTEMA.csproj|c:\\users\\administrador\\onedrive\\documentos\\proyectofinal\\sistema\\sistema\\reportes\\rptnomina.rdlc||{46F6D2A1-5E86-4080-A799-01F3D0E23796}",
-      "RelativeMoniker": "D:0:0:{228EAC07-45A9-4506-A55B-32EFB19D7085}|SISTEMA\\SISTEMA.csproj|solutionrelative:sistema\\reportes\\rptnomina.rdlc||{46F6D2A1-5E86-4080-A799-01F3D0E23796}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{228EAC07-45A9-4506-A55B-32EFB19D7085}|SISTEMA\\SISTEMA.csproj|c:\\users\\administrador\\onedrive\\documentos\\proyectofinal\\sistema\\sistema\\dataset\\dsnomina.xsd||{07AC752B-D2B0-4DCD-AD9C-237BF561A30A}",
-      "RelativeMoniker": "D:0:0:{228EAC07-45A9-4506-A55B-32EFB19D7085}|SISTEMA\\SISTEMA.csproj|solutionrelative:sistema\\dataset\\dsnomina.xsd||{07AC752B-D2B0-4DCD-AD9C-237BF561A30A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{228EAC07-45A9-4506-A55B-32EFB19D7085}|SISTEMA\\SISTEMA.csproj|c:\\users\\administrador\\onedrive\\documentos\\proyectofinal\\sistema\\sistema\\formularios\\nuevoemp8.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{228EAC07-45A9-4506-A55B-32EFB19D7085}|SISTEMA\\SISTEMA.csproj|solutionrelative:sistema\\formularios\\nuevoemp8.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{228EAC07-45A9-4506-A55B-32EFB19D7085}|SISTEMA\\SISTEMA.csproj|c:\\users\\administrador\\onedrive\\documentos\\proyectofinal\\sistema\\sistema\\formularios\\frmreporte.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{228EAC07-45A9-4506-A55B-32EFB19D7085}|SISTEMA\\SISTEMA.csproj|solutionrelative:sistema\\formularios\\frmreporte.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{228EAC07-45A9-4506-A55B-32EFB19D7085}|SISTEMA\\SISTEMA.csproj|c:\\users\\administrador\\onedrive\\documentos\\proyectofinal\\sistema\\sistema\\formularios\\nuevoemp8.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{228EAC07-45A9-4506-A55B-32EFB19D7085}|SISTEMA\\SISTEMA.csproj|solutionrelative:sistema\\formularios\\nuevoemp8.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{228EAC07-45A9-4506-A55B-32EFB19D7085}|SISTEMA\\SISTEMA.csproj|c:\\users\\administrador\\onedrive\\documentos\\proyectofinal\\sistema\\sistema\\formularios\\registronom12.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{228EAC07-45A9-4506-A55B-32EFB19D7085}|SISTEMA\\SISTEMA.csproj|solutionrelative:sistema\\formularios\\registronom12.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,136 +14,44 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 6,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "EMPLEADOSACTI9.cs",
-              "DocumentMoniker": "C:\\Users\\Administrador\\OneDrive\\Documentos\\ProyectoFinal\\SISTEMA\\SISTEMA\\Formularios\\EMPLEADOSACTI9.cs",
-              "RelativeDocumentMoniker": "SISTEMA\\Formularios\\EMPLEADOSACTI9.cs",
-              "ToolTip": "C:\\Users\\Administrador\\OneDrive\\Documentos\\ProyectoFinal\\SISTEMA\\SISTEMA\\Formularios\\EMPLEADOSACTI9.cs",
-              "RelativeToolTip": "SISTEMA\\Formularios\\EMPLEADOSACTI9.cs",
-              "ViewState": "AgIAAFYAAAAAAAAAAADwv5MAAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-06T02:22:46.65Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "FrmReporte.cs",
-              "DocumentMoniker": "C:\\Users\\Administrador\\OneDrive\\Documentos\\ProyectoFinal\\SISTEMA\\SISTEMA\\Formularios\\FrmReporte.cs",
-              "RelativeDocumentMoniker": "SISTEMA\\Formularios\\FrmReporte.cs",
-              "ToolTip": "C:\\Users\\Administrador\\OneDrive\\Documentos\\ProyectoFinal\\SISTEMA\\SISTEMA\\Formularios\\FrmReporte.cs",
-              "RelativeToolTip": "SISTEMA\\Formularios\\FrmReporte.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-06T01:16:46.133Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "FrmReporte.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Administrador\\OneDrive\\Documentos\\ProyectoFinal\\SISTEMA\\SISTEMA\\Formularios\\FrmReporte.cs",
-              "RelativeDocumentMoniker": "SISTEMA\\Formularios\\FrmReporte.cs",
-              "ToolTip": "C:\\Users\\Administrador\\OneDrive\\Documentos\\ProyectoFinal\\SISTEMA\\SISTEMA\\Formularios\\FrmReporte.cs [Dise\u00F1o]",
-              "RelativeToolTip": "SISTEMA\\Formularios\\FrmReporte.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-06T01:01:23.112Z",
-              "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "RptNomina.rdlc [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Administrador\\OneDrive\\Documentos\\ProyectoFinal\\SISTEMA\\SISTEMA\\Reportes\\RptNomina.rdlc",
-              "RelativeDocumentMoniker": "SISTEMA\\Reportes\\RptNomina.rdlc",
-              "ToolTip": "C:\\Users\\Administrador\\OneDrive\\Documentos\\ProyectoFinal\\SISTEMA\\SISTEMA\\Reportes\\RptNomina.rdlc [Dise\u00F1o]",
-              "RelativeToolTip": "SISTEMA\\Reportes\\RptNomina.rdlc [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001755|",
-              "WhenOpened": "2024-12-06T00:41:13.243Z",
-              "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "REGISTRONOM12.cs",
-              "DocumentMoniker": "C:\\Users\\Administrador\\OneDrive\\Documentos\\ProyectoFinal\\SISTEMA\\SISTEMA\\Formularios\\REGISTRONOM12.cs",
+              "DocumentMoniker": "C:\\Users\\rosma\\OneDrive\\Escritorio\\ProyectoFinal\\SISTEMA\\SISTEMA\\Formularios\\REGISTRONOM12.cs",
               "RelativeDocumentMoniker": "SISTEMA\\Formularios\\REGISTRONOM12.cs",
-              "ToolTip": "C:\\Users\\Administrador\\OneDrive\\Documentos\\ProyectoFinal\\SISTEMA\\SISTEMA\\Formularios\\REGISTRONOM12.cs",
+              "ToolTip": "C:\\Users\\rosma\\OneDrive\\Escritorio\\ProyectoFinal\\SISTEMA\\SISTEMA\\Formularios\\REGISTRONOM12.cs",
               "RelativeToolTip": "SISTEMA\\Formularios\\REGISTRONOM12.cs",
-              "ViewState": "AgIAAAIBAAAAAAAAAAAQwAYBAAAdAAAAAAAAAA==",
+              "ViewState": "AgIAACwBAAAAAAAAAAAgwAMBAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-06T00:08:14.787Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "DsNomina.xsd",
-              "DocumentMoniker": "C:\\Users\\Administrador\\OneDrive\\Documentos\\ProyectoFinal\\SISTEMA\\SISTEMA\\DataSet\\DsNomina.xsd",
-              "RelativeDocumentMoniker": "SISTEMA\\DataSet\\DsNomina.xsd",
-              "ToolTip": "C:\\Users\\Administrador\\OneDrive\\Documentos\\ProyectoFinal\\SISTEMA\\SISTEMA\\DataSet\\DsNomina.xsd",
-              "RelativeToolTip": "SISTEMA\\DataSet\\DsNomina.xsd",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003579|",
-              "WhenOpened": "2024-12-06T01:04:39.322Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "NUEVOEMP8.cs",
-              "DocumentMoniker": "C:\\Users\\Administrador\\OneDrive\\Documentos\\ProyectoFinal\\SISTEMA\\SISTEMA\\Formularios\\NUEVOEMP8.cs",
-              "RelativeDocumentMoniker": "SISTEMA\\Formularios\\NUEVOEMP8.cs",
-              "ToolTip": "C:\\Users\\Administrador\\OneDrive\\Documentos\\ProyectoFinal\\SISTEMA\\SISTEMA\\Formularios\\NUEVOEMP8.cs",
-              "RelativeToolTip": "SISTEMA\\Formularios\\NUEVOEMP8.cs",
-              "ViewState": "AgIAACcAAAAAAAAAAAAcwGoBAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-06T01:08:41.155Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "FrmReporte.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\Administrador\\OneDrive\\Documentos\\ProyectoFinal\\SISTEMA\\SISTEMA\\Formularios\\FrmReporte.Designer.cs",
-              "RelativeDocumentMoniker": "SISTEMA\\Formularios\\FrmReporte.Designer.cs",
-              "ToolTip": "C:\\Users\\Administrador\\OneDrive\\Documentos\\ProyectoFinal\\SISTEMA\\SISTEMA\\Formularios\\FrmReporte.Designer.cs",
-              "RelativeToolTip": "SISTEMA\\Formularios\\FrmReporte.Designer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD4AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-06T01:19:32.096Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "NUEVOEMP8.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Administrador\\OneDrive\\Documentos\\ProyectoFinal\\SISTEMA\\SISTEMA\\Formularios\\NUEVOEMP8.cs",
-              "RelativeDocumentMoniker": "SISTEMA\\Formularios\\NUEVOEMP8.cs",
-              "ToolTip": "C:\\Users\\Administrador\\OneDrive\\Documentos\\ProyectoFinal\\SISTEMA\\SISTEMA\\Formularios\\NUEVOEMP8.cs [Dise\u00F1o]",
-              "RelativeToolTip": "SISTEMA\\Formularios\\NUEVOEMP8.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-05T23:52:26.26Z",
-              "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "REGISTRONOM12.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Administrador\\OneDrive\\Documentos\\ProyectoFinal\\SISTEMA\\SISTEMA\\Formularios\\REGISTRONOM12.cs",
-              "RelativeDocumentMoniker": "SISTEMA\\Formularios\\REGISTRONOM12.cs",
-              "ToolTip": "C:\\Users\\Administrador\\OneDrive\\Documentos\\ProyectoFinal\\SISTEMA\\SISTEMA\\Formularios\\REGISTRONOM12.cs [Dise\u00F1o]",
-              "RelativeToolTip": "SISTEMA\\Formularios\\REGISTRONOM12.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-05T23:52:27.809Z",
-              "EditorCaption": " [Dise\u00F1o]"
             }
           ]
         }
